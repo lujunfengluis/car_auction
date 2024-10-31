@@ -1,0 +1,54 @@
+[
+    {
+        "name": "base",
+        "vehicle_type": "common",
+        "percentage": 13,
+        "min": 100,
+        "max": 200,
+        "fixed": null,
+        "tier_charges": null
+    },
+    {
+        "name": "special",
+        "vehicle_type": "common",
+        "percentage": 33,
+        "min": null,
+        "max": null,
+        "fixed": null,
+        "tier_charges": null
+    },
+    {
+        "name": "storage",
+        "vehicle_type": "common",
+        "percentage": null,
+        "min": null,
+        "max": null,
+        "fixed": 60,
+        "tier_charges": null
+    },
+    {
+        "name": "association",
+        "vehicle_type": "common",
+        "percentage": null,
+        "min": null,
+        "max": null,
+        "fixed": null,
+        "tier_charges": [
+            {
+                "min": 0,
+                "max": 100,
+                "fee": 20
+            },
+            {
+                "min": 100,
+                "max": 500,
+                "fee": 200
+            },
+            {
+                "min": 500,
+                "max": null,
+                "fee": 200
+            }
+        ]
+    }
+]
