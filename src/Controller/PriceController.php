@@ -16,7 +16,11 @@ class PriceController extends AbstractController
         Pricing $pricing
     ): JsonResponse
     {
-      $result = array_merge(['vehicle_type' => $priceRequestDto->vehicleType], $pricing->setFees($priceRequestDto));
+      try {
+        $result = $pricing->setFees($priceRequestDto);
+      } catch (\Throwable $th) {
+        return $this->json(['error' =>$th->getMessage()], $th->getCode());
+      }
       
       return $this->json(['result' =>$result]);
     }
