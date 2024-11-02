@@ -1,10 +1,12 @@
 <script>
     import axios from "axios";
 
+    const api_host = import.meta.env.VITE_API_HOST;
+
     export default {
         data() {
             return {
-                api_url: "http://127.0.0.1:8000/price",
+                api_url: `${api_host}/price`,
                 vehicle_types: ['common', 'luxury'],
                 vehicle_type: null,
                 price: 0,
