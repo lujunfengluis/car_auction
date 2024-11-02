@@ -19,9 +19,12 @@ class PriceController extends AbstractController
       try {
         $result = $pricing->setFees($priceRequestDto);
       } catch (\Throwable $th) {
-        return $this->json(['error' =>$th->getMessage()], $th->getCode());
+        $response = $this->json(['error' =>$th->getMessage()], $th->getCode());
       }
       
-      return $this->json(['result' =>$result]);
+      $response = $this->json(['result' =>$result]);
+      $response->headers->set('Access-Control-Allow-Origin', '*');
+
+      return $response;
     }
 }
