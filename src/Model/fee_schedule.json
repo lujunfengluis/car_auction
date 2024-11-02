@@ -1,0 +1,126 @@
+[
+    {
+        "name": "basic",
+        "vehicle_type": "common",
+        "percentage": 10,
+        "min": 10,
+        "max": 50,
+        "fixed": null,
+        "tier_charges": null
+    },
+    {
+        "name": "base",
+        "vehicle_type": "luxury",
+        "percentage": 10,
+        "min": 25,
+        "max": 200,
+        "fixed": null,
+        "tier_charges": null
+    },
+    {
+        "name": "special",
+        "vehicle_type": "common",
+        "percentage": 2,
+        "min": null,
+        "max": null,
+        "fixed": null,
+        "tier_charges": null
+    },
+    {
+        "name": "special",
+        "vehicle_type": "luxury",
+        "percentage": 4,
+        "min": null,
+        "max": null,
+        "fixed": null,
+        "tier_charges": null
+    },
+    {
+        "name": "storage",
+        "vehicle_type": "common",
+        "percentage": null,
+        "min": null,
+        "max": null,
+        "fixed": 100,
+        "tier_charges": null
+    },
+    {
+        "name": "storage",
+        "vehicle_type": "luxury",
+        "percentage": null,
+        "min": null,
+        "max": null,
+        "fixed": 100,
+        "tier_charges": null
+    },
+    {
+        "name": "association",
+        "vehicle_type": "common",
+        "percentage": null,
+        "min": null,
+        "max": null,
+        "fixed": null,
+        "tier_charges": [
+            {
+                "min": 0,
+                "max": 0.99,
+                "fee": 0
+            },
+            {
+                "min": 1,
+                "max": 500,
+                "fee": 5
+            },
+            {
+                "min": 500,
+                "max": 1000,
+                "fee": 10
+            },
+            {
+                "min": 1000,
+                "max": 3000,
+                "fee": 15
+            },
+            {
+                "min": 3000,
+                "max": null,
+                "fee": 20
+            }
+        ]
+    },
+    {
+        "name": "association",
+        "vehicle_type": "luxury",
+        "percentage": null,
+        "min": null,
+        "max": null,
+        "fixed": null,
+        "tier_charges": [
+            {
+                "min": 0,
+                "max": 0.99,
+                "fee": 0
+            },
+            {
+                "min": 1,
+                "max": 500,
+                "fee": 5
+            },
+            {
+                "min": 500,
+                "max": 1000,
+                "fee": 10
+            },
+            {
+                "min": 1000,
+                "max": 3000,
+                "fee": 15
+            },
+            {
+                "min": 3000,
+                "max": null,
+                "fee": 20
+            }
+        ]
+    }
+]
