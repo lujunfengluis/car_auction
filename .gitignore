@@ -21,6 +21,7 @@
 
 ###> VueJS ###
 **/node_modules/
+# /vue-project/.env.*
 
 ###> VSCODE ###
 **/.vscode/
