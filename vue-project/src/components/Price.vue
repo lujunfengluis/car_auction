@@ -15,7 +15,10 @@
 
         mounted() {
             this.vehicle_type = this.vehicle_types[0];
-            this.$watch(vm => [vm.vehicle_type, vm.price], val => this.checkPrice());
+            this.$watch(vm => [vm.vehicle_type, vm.price], val => {
+                this.formatPrice();
+                this.checkPrice();
+            });
         },
 
         methods: {
@@ -38,8 +41,6 @@
                     this.error_message = null;
                     this.fees = response_data['result'];
                 }
-
-                this.formatPrice();
             },
 
             checkPrice() {
@@ -75,6 +76,10 @@
 
             formatPrice() {
                 this.price = Math.round(this.price*100)/100;
+            },
+
+            capitalize(val) {
+                return val[0].toUpperCase() + val.slice(1);
             }
         }
     }
@@ -91,13 +96,13 @@
                 <div><span>Car type: </span></div>
                 <div>
                     <select class="form-select" aria-label="Default select example" v-model="vehicle_type">
-                        <option v-for="type in vehicle_types" :value="type">{{ type }}</option>
+                        <option v-for="type in vehicle_types" :value="type">{{ capitalize(type) }}</option>
                     </select>
                 </div>
             </div>
         </div>
         <div class="d-flex flex-row justify-content-center mb-2">
-            <div><span>Price: $<input type="number" min="0" v-model="price"/></span></div>
+            <div><span>Bid price: $<input type="number" min="0" v-model="price"/></span></div>
         </div>
     </div>
     <div class="row alert alert-danger" v-if="error_message" role="alert">
@@ -107,7 +112,7 @@
         <table class="table">
             <tbody>
                 <tr v-for="(fee, type) in fees['fees']" :key="type">
-                    <td>{{ type[0].toUpperCase() + type.slice(1) }}</td> 
+                    <td>{{ capitalize(type) }}</td> 
                     <td>{{ fee }}</td>  
                 </tr>
                 <tr>

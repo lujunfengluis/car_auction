@@ -6,14 +6,20 @@ use Symfony\Component\Validator\Constraints as Assert;
 class TierCharge
 {
     public function __construct(
-        #[Assert\GreaterThanOrEqual(0)]
+        #[Assert\AtLeastOneOf([
+            new Assert\Blank,
+            new Assert\GreaterThanOrEqual(0)
+        ])]
         private ?float $min,
 
-        #[Assert\GreaterThan(0)]
+        #[Assert\AtLeastOneOf([
+            new Assert\Blank,
+            new Assert\GreaterThanOrEqual(0)
+        ])]
         private ?float $max,
 
         #[Assert\NotBlank]
-        #[Assert\GreaterThan(0)]
+        #[Assert\GreaterThanOrEqual(0)]
         private float $fee,
     ) {
     }
