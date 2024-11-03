@@ -7,7 +7,7 @@
 
 ```
 composer install
-symfony server:start
+symfony server:start --port=1337
 ```
 
 # Frontend
@@ -26,4 +26,4 @@ npm run dev
 ```
 docker compose up -d
 ```
-- Open browser at http://127.0.0.1:1338/
+- Open browser at http://127.0.0.1:5173/
